@@ -1,18 +1,25 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
+function strToBool(str) {
+    return str.toLowerCase() === "true"
+}
 
 function ThemeProvider(props) {
     
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
-    
-    const toggleTheme = () => setIsDarkTheme(curr => !curr);
-    const toggleDark = () => setIsDarkTheme(true);
-    const toggleLight = () => setIsDarkTheme(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(() => strToBool(localStorage.getItem("isDarkTheme")));
+
+    const toggleTheme = () => {
+        setIsDarkTheme(curr => !curr)
+    }
+
+    useEffect(() => {
+        localStorage.setItem("isDarkTheme", isDarkTheme)
+    }, [isDarkTheme])
 
     return (
-        <ThemeContext.Provider value={{ isDarkTheme, toggleDark, toggleTheme, toggleLight }}>
+        <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
             {props.children}
         </ThemeContext.Provider>
     )
