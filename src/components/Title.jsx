@@ -1,6 +1,6 @@
 export default function Title({variant, className, ...props}) {
     if (variant === "h1") return (
-        <h1 className={`text-5xl border-b-2 border-slate-700 dark:border-slate-400 pb-3 ${className}`}>{props.children}</h1>
+        <h1 className={`font-semibold text-5xl border-b-2 border-slate-700 dark:border-slate-400 pb-3 ${className}`}>{props.children}</h1>
     )
     if (variant === "h2") return (
         <h2 className={`text-4xl ${className}`}>{props.children}</h2>

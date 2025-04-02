@@ -8,7 +8,6 @@ export default function ArticlesPage() {
                 variant="h1"
                 className="mb-5 flex items-center gap-5"
             >
-                <img className="w-12 rounded-xl" src="icon.jpg" alt="logo.png" />
                 Articles
             </Title>
             <div className="flex flex-col">

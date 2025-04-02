@@ -7,7 +7,7 @@ import ExternalLink from "../components/ExternalLink";
 export default function RenderPatternArticle() {
     return (
         <div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-7">
                 <Title variant="h1">The Render Pattern</Title>
 
                 <Title variant="h2">A Magic World of Patterns</Title>
@@ -138,7 +138,7 @@ export default function DialogButton() {
                     one to pick).
                 </p>
 
-                <p>The first option:</p>
+                <Title variant="h3">The first option</Title>
                 <CodeBlock>
                     {`export default function DialogButton({
   buttonText, 
@@ -172,7 +172,7 @@ export default function DialogButton() {
 }`}
                </CodeBlock>
 
-                <p>The second option:</p>
+                <Title variant="h3">The second option:</Title>
                 <CodeBlock>
                     {`// second option
 export default function DialogButton({ dialogContent, ...props }) {
