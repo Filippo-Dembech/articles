@@ -2,6 +2,7 @@ import Code from "../components/Code";
 import Title from "../components/Title";
 import Disclaimer from "../components/Disclaimer";
 import CodeBlock from "../components/CodeBlock";
+import ExternalLink from "../components/ExternalLink";
 
 export default function RenderPatternArticle() {
     return (
@@ -39,7 +40,7 @@ export default function RenderPatternArticle() {
                 </p>
 
                 <Disclaimer noteText="A little disclaimer">
-                    In this article, I’ll use Material UI components to make the
+                    In this article, I’ll use <ExternalLink href="https://mui.com/material-ui/">Material UI</ExternalLink> components to make the
                     code more succinct. But of course, you can use any
                     components you want. You can create them from scratch and
                     then apply this pattern. However, for this tutorial, I
@@ -111,12 +112,17 @@ export default function DialogButton() {
   )
 }`}
                 </CodeBlock>
+                
+                <Disclaimer noteText="Material UI">
+                    If you want to understand better the Material UI <Code isComponent>Dialog</Code> component go to the <ExternalLink href="https://mui.com/material-ui/react-dialog/">official guide</ExternalLink>.
+                </Disclaimer>
+                
 
                 <Title variant="h2">One Pattern, Multiple Solutions</Title>
                 <p>
                     Next step! Let’s make this component more flexible! We want
                     to allow the client to customize both the{" "}
-                    <Code isComponent>Button</Code>
+                    <Code isComponent>Button</Code>{" "}
                     text and the <Code isComponent>Dialog</Code> content. Let's
                     do it!
                 </p>
@@ -128,8 +134,7 @@ export default function DialogButton() {
                     the other depending on your specific needs. In the first
                     option I want to define the <Code>buttonText</Code> as a
                     prop, in the other option as a child of the{" "}
-                    <Code isComponent>DialogButton</Code>
-                    component (both are good choices! It's on you deciding which
+                    <Code isComponent>DialogButton</Code> component (both are good choices! It's on you deciding which
                     one to pick).
                 </p>
 
@@ -200,8 +205,10 @@ export default function DialogButton({ dialogContent, ...props }) {
 
                 <Disclaimer noteText="note">
                     Why <Code>props.children</Code> and not just{" "}
-                    <Code>children</Code>? This is for another post
+                    <Code>children</Code>? This is for another post...
                 </Disclaimer>
+
+                <p>PERFECT! Now, this being said. I will go for the <em>first option</em>! I think it makes the client code a bit more readable (not our code... the programmer code is always a little bit uglier).</p>
 
                 <Title variant="h2">
                     One Problem, One Solution, One Pattern
